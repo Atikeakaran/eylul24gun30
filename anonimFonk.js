@@ -3,30 +3,33 @@
 function gulucukle(str) {
     return str + " :)";
 }
-/* 
+
 let ad = "betül";
 let gulenAd = gulucukle(ad);
- */
+console.log(gulenAd);
 
 // callback fonksiyon
-function yazdir(metin, donusturucu) {
-    metin = donusturucu(metin);
+ function yazdir(metin, fonk) {
+    metin = fonk(metin);
     console.log(metin);
-}
-//yazdir("sakin olun", ???)
+} 
+
 yazdir("sakin ol", gulucukle);
 
 //anonim fonksiyon değişkende saklayarak ( saklanmazsa değişken kaybolur!)
-const buyutucu = function (x) {
+ const buyutucu = function (x) {
     return x.toLocaleUpperCase();
-};
+}; 
+/* function buyutucu(x) {
+    return x.toLocaleUpperCase();
+}; */
 
 yazdir("tarhana corbası", buyutucu);
 
 //Anonim fonksiyonla 
 yazdir("me before you", function (str) {
     return str.split("").join("-");
-});
+} );
 
 // split ["m", "e"] yapar join "m e " yapar
 
@@ -38,7 +41,6 @@ yazdir("Muvaffakiyetsizleştiricileştiriveremeyebileceklerimizdenmişsinizcesin
 function uckere(str) {
     //return str + str + str;
     return str.repeat(3);
-
 }
 
 yazdir("7", uckere);
